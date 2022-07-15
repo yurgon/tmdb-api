@@ -29,6 +29,11 @@ module TMDb
         bad_response(res)
       end
     end
+    
+    def find_by_external_id(id, options = {})
+      res = get("/find/#{id}", query: options)
+      res.success? ? res : bad_response(res)
+    end
 
     private
 
