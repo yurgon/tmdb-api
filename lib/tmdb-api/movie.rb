@@ -99,9 +99,9 @@ module TMDb
     #
     # Examples
     #
-    #   TMDb::Movie.trailers(68721, language: pt)
-    def self.trailers(id, options = {})
-      res = get("/movie/#{id}/trailers", query: options)
+    #   TMDb::Movie.videos(68721, language: pt)
+    def self.videos(id, options = {})
+      res = get("/movie/#{id}/videos", query: options)
       res.success? ? res : bad_response(res)
     end
 
