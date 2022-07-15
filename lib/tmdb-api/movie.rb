@@ -26,10 +26,6 @@ module TMDb
       res.success? ? Movie.new(res) : bad_response(res)
     end
     
-    def self.find_external_id(id, options = {})
-      res = get("/find/#{id}", query: options)
-      res.success? ? Movie.new(res) : bad_response(res)
-    end
     # Public: Get the alternative titles for a specific movie ID.
     #
     # options - The hash options used to filter the search (default: {}):
