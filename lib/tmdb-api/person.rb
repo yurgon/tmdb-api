@@ -20,6 +20,16 @@ module TMDb
       res = get("/person/#{id}", query: options)
       res.success? ? Person.new(res) : bad_response(res)
     end
+    
+    def self.external_ids(id)
+      res = get("/person/#{id}/external_ids")
+      res.success? ? res : bad_response(res)
+    end
+    
+    def self.translations(id)
+      res = get("/person/#{id}/translations")
+      res.success? ? res : bad_response(res)
+    end
 
     # Public: Gets the images for a specific person ID.
     #
