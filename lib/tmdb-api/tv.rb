@@ -19,6 +19,11 @@ module TMDb
       res = get("/tv/#{id}/alternative_titles", query: options)
       res.success? ? res['titles'] : bad_response(res)
     end
+    
+    def self.translations(id, options = {})
+      res = get("/tv/#{id}/translations", query: options)
+      res.success? ? res['translations'] : bad_response(res)
+    end
 
     def self.cast(id, options = {})
       res = get("/tv/#{id}/credits", query: options)
