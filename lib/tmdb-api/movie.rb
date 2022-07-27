@@ -38,6 +38,11 @@ module TMDb
       res = get("/movie/#{id}/alternative_titles", query: options)
       res.success? ? res['titles'] : bad_response(res)
     end
+    
+    def self.translations(id, options = {})
+      res = get("/movie/#{id}/translations", query: options)
+      res.success? ? res['translations'] : bad_response(res)
+    end
 
     # Public: Get the cast for a specific movie ID.
     #
